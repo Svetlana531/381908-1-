@@ -4,16 +4,16 @@
 #include <fstream>
 #include <string>
 
-#define MemLim 100   // Размер памяти
-#define StackNum 15  // Стеки
+#define MemLim 100   // ГђГ Г§Г¬ГҐГ° ГЇГ Г¬ГїГІГЁ
+#define StackNum 15  // Г‘ГІГҐГЄГЁ
 
 class MultiRoot
 {
 protected:
-	int Mem[MemLim];
+	int* Mem;
 	int DefaultStack;
 public:
-	MultiRoot() { DefaultStack = 0; }
+	MultiRoot() { Mem = new int[MemLim]; DefaultStack = 0; }
 
 	virtual bool IsEmpty(int ns) const = 0;
 	virtual bool IsFull(int ns) const = 0;
